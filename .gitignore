@@ -1,6 +1,5 @@
 .env
 venv/
 app.db
-db_repository/
 tmp/
 *.pyc
