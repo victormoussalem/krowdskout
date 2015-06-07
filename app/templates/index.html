@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+	{% for location in locations.items %}
+		{% include 'device.html' %}
+	{% endfor %}
+	{% if locations.has_prev %}<a href="{{ url_for('index', page=locations.prev_num) }}">&lt;&lt; Previous</a>{% else %}&lt;&lt; Previous{% endif %} | 
+	{% if locations.has_next %}<a href="{{ url_for('index', page=locations.next_num) }}">Next &gt;&gt;</a>{% else %}Next &gt;&gt;{% endif %}
+{% endblock %}

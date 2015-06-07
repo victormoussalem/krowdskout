@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Add Location</h1>
+	<form action="" method="post" name="add_location">
+		{{ form.hidden_tag() }}
+		<p>Name: {{ form.name(size=64) }}</p>
+		<p>Address: {{ form.address(size=80) }}</p>
+		<p>Device ID: {{ form.device_id(size=24) }}</p>
+		<p><input type="submit" value="Add"></p>
+	</form>
+{% endblock %}
