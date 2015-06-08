@@ -1,9 +1,9 @@
 <table>
-    <tr valign="top">
+    <tr valign="top"> <!-- Add the loop index id such that each row is individually accessible. -->
     	{% if location.occupancy_count == "1" %}
-    	<td><i>{{ location.name }}:</i>  {{ location.occupancy_count }} person</td>
+    	<td><i>{{ location.name }}:</i>  <span id="location{{ loop.index }}">{{ location.occupancy_count }}</span> person Loop Index: location{{ loop.index }}</td>
     	{% else %}
-        <td><i>{{ location.name }}:</i>  {{ location.occupancy_count }} people</td>
+        <td><i>{{ location.name }}:</i>  <span id="location{{ loop.index }}" >{{ location.occupancy_count }}</span> people Loop Index: location{{ loop.index }}</td>
     	{% endif %}
     </tr>
 </table>

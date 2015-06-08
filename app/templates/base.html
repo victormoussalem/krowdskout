@@ -5,6 +5,10 @@
 		{% else %}
 			<title> Krowdscout </title>
 		{% endif %}
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type=text/javascript>
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
 	</head>
 	<body>
 	    <div>
@@ -23,4 +27,5 @@
     	{% endwith %}
 		{% block content %}{% endblock %}
 	</body>
+    {%block tail_js %}{% endblock %}
 </html>
