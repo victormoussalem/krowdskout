@@ -20,7 +20,7 @@ def repeated_code(sc):
 			if js['result'] is not None:
 				l.occupancy_count = js['result']
 				db.session.commit()
-	sc.enter(1,1,repeated_code, (sc,))
+	sc.enter(2,1,repeated_code, (sc,))
 
-s.enter(1,1,repeated_code,(s,))
+s.enter(2,1,repeated_code,(s,))
 s.run()

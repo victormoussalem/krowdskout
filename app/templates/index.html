@@ -1,8 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 	{% for location in locations.items %}
+		{% set my_loop = loop %}
 		{% include 'device.html' %}
 	{% endfor %}
 	{% if locations.has_prev %}<a href="{{ url_for('index', page=locations.prev_num) }}">&lt;&lt; Previous</a>{% else %}&lt;&lt; Previous{% endif %} | 
 	{% if locations.has_next %}<a href="{{ url_for('index', page=locations.next_num) }}">Next &gt;&gt;</a>{% else %}Next &gt;&gt;{% endif %}
+{% endblock %}
+{% block tail_js %}
+	<script type=text/javascript>
+		setInterval(                               //Periodically 
+		  function()
+		  {
+		     $.getJSON(                            //Get some values from the server
+		        $SCRIPT_ROOT + '/refresh_locations',      // At this URL
+		        {},                                // With no extra parameters
+		        function(data)                     // And when you get a response
+		        {
+		          $("#location1").text(data.result);  // Write the results into the 
+		                                             // #location1 element
+		        });
+		  },
+		  500);                                    // And do it every 500ms
+	</script>
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request, session
+from flask import render_template, flash, redirect, url_for, request, session, jsonify
 from app import app, db
 from .forms import LocationForm
 from .models import Location
@@ -22,3 +22,9 @@ def add_location():
 			db.session.commit()
 		return redirect(url_for('index'))
 	return render_template('add_location.html',title='Add Location',form=form)
+
+#A route to handle updating locations without a page refresh.
+@app.route('/refresh_locations')
+def refresh_locations():
+	location = Location.query.first()
+	return jsonify(result=location.occupancy_count)
