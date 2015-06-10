@@ -37,7 +37,7 @@ def update_occupancy():
 		device_id = data['device_id']
 		if device_id is not None:
 			l = Location.query.filter_by(device_id=device_id).first()
-			occ_change = int(data['occ_change'])
+			occ_change = data['occ_change']
 			if occ_change is not None:
-				l.occupancy_count += occ_change
+				l.occupancy_count = occ_change
 				db.session.commit()
