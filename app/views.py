@@ -23,8 +23,21 @@ def add_location():
 		return redirect(url_for('index'))
 	return render_template('add_location.html',title='Add Location',form=form)
 
-#A route to handle updating locations without a page refresh.
+# A route to handle updating locations without a page refresh.
 @app.route('/refresh_locations')
 def refresh_locations():
 	location = Location.query.first()
 	return jsonify(result=location.occupancy_count)
+
+# A route to be invoked by the Particle cloud when there is a change in occupancy count.
+@app.route('/update_occupancy', methods=['Post'])
+def update_occupancy():
+	data = request.form['json']
+	if data is not None:
+		device_id = data['device_id']
+		if device_id is not None:
+			l = Location.query.filter_by(device_id=device_id).first()
+			occ_change = int(data['occ_change'])
+			if occ_change is not None:
+				l.occupancy_count += occ_change
+				db.session.commit()
