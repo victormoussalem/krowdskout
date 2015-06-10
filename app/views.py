@@ -32,16 +32,14 @@ def refresh_locations():
 # A route to be invoked by the Particle cloud when there is a change in occupancy count.
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
-	l = Location.query.first()
-	l.occupancy_count = '7'
-	db.session.commit()
-	return "Success!"
-	#data = request.form['json']
-	#if data is not None:
-	#	device_id = data['device_id']
-#		if device_id is not None:
-#			l = Location.query.filter_by(device_id=device_id).first()
-#			occ_change = data['occ_change']
-#			if occ_change is not None:
-#				l.occupancy_count = occ_change
-#				db.session.commit()
+	data = request.form['json']
+	if data is not None:
+		device_id = data['device_id']
+		if device_id is not None:
+			l = Location.query.filter_by(device_id=device_id).first()
+			occ_change = data['occ_change']
+			if occ_change is not None:
+				l.occupancy_count = occ_change
+				db.session.commit()
+				return 'Success!'
+	return 'Failure :('
