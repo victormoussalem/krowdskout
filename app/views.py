@@ -34,7 +34,7 @@ def refresh_locations():
 def update_occupancy():
 	data = request.get_json(force=True)
 	occ_change = data['occ_change']
-	return "Success!"
+	return str(data)
 	#if data is not None:
 	#	device_id = data['device_id']
 	#	if device_id is not None:
