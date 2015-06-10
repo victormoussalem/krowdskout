@@ -35,6 +35,7 @@ def update_occupancy():
 	l = Location.query.first()
 	l.occupancy_count = '7'
 	db.session.commit()
+	return "Success!"
 	#data = request.form['json']
 	#if data is not None:
 	#	device_id = data['device_id']
