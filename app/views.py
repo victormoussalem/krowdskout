@@ -30,7 +30,7 @@ def refresh_locations():
 	return jsonify(result=location.occupancy_count)
 
 # A route to be invoked by the Particle cloud when there is a change in occupancy count.
-# Also have access to data, published_at, and event json parameters.
+# Also have access to data, published_at, and event json parameters.  Data is duplicate of occ_change.
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
 	data = request.get_json(force=True)
