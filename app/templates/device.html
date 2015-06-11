@@ -1,6 +1,6 @@
 <table>
     <tr valign="top"> <!-- Add the loop index id such that each row is individually accessible. -->
-    	{% if location.occupancy_count == '1' || location.occupancy_count == '-1' %}
+    	{% if location.occupancy_count == "1" %}
     	<td><i>{{ location.name }}:</i>  <span id="location{{ my_loop.index }}">{{ location.occupancy_count }}</span> person</td>
     	{% else %}
         <td><i>{{ location.name }}:</i>  <span id="location{{ my_loop.index }}">{{ location.occupancy_count }}</span> people</td>
