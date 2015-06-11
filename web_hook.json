@@ -1,0 +1,12 @@
+{
+    "eventName": "update",
+    "url": "https://krowdscout.herokuapp.com/update_occupancy",
+    "requestType": "POST",
+    "headers": null,
+    "responseTemplate":"",
+    "json": {
+        "occ_change": "{{SPARK_EVENT_VALUE}}"
+    },
+    "auth": null,
+    "mydevices": true
+}
