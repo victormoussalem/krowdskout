@@ -23,7 +23,7 @@ Running the web-app locally
 
 	Now we need to install our application dependencies in our virtual
 	environment, this can be accomplished with the following command:
-	$ pip install Flask gunicorn flask-login flask-sqlalchemy sqlalchemy-migrate
+	$ pip install Flask gunicorn flask-login flask-sqlalchemy sqlalchemy-migrate flask-wtf 
 
 2.  Modifying configuration variables:
 	
