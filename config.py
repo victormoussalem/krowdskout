@@ -11,7 +11,7 @@ else:
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
-ACCESS_TOKEN = '8ee27215f27c6a2d5ce1975abb0c86938e63589e'
+ACCESS_TOKEN = '34236f2b373f597eab052e6cc6432d70f90aff3a'
 SPARK_OCCUPANCY = 'cm'
 
 # pagination
