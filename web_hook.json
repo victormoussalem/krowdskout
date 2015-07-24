@@ -1,6 +1,6 @@
 {
     "eventName": "update",
-    "url": "https://krowdscout.herokuapp.com/update_occupancy",
+    "url": "https://krowdskout.herokuapp.com/update_occupancy",
     "requestType": "POST",
     "headers": null,
     "responseTemplate":"",
