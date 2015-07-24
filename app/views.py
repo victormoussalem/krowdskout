@@ -33,6 +33,7 @@ def refresh_locations():
 # Also have access to data, published_at, and event json parameters.  Data is duplicate of occ_change.
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
+	data = request.get_json(force=True)
 	l = Location.query.first()
 	l.occupancy_count = 2
 	db.session.commit()
