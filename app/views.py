@@ -36,12 +36,16 @@ def update_occupancy():
 	data = request.get_json(force=True)
 	if data is not None:
 		device_id = data['coreid']
+		print device_id + " device_id"
 		if device_id is not None:
 			occ_change = data['occ_change']
+			print occ_change + " occ_change"
 			if occ_change is not None:
 				l = Location.query.filter_by(device_id=device_id).first()
+				print l + " l"
 				if l is not None:
 					l.occupancy_count= occ_change
+					print l.occupancy + " l.occupancy"
 					db.session.commit()
 					return 'Success!'
 	return 'Failure :('
