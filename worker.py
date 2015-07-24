@@ -12,7 +12,7 @@ def repeated_code(sc):
 	payload = {'access_token': ACCESS_TOKEN}
 
 	for l in locations:
-		url = 'https://api.particle.io/v1/devices/' + l.device_id + '/' + SPARK_OCCUPANCY
+		url = 'https://api.particle.io/v1/devices/' + l.device_id #  + '/' + SPARK_OCCUPANCY
 		print url
 		r = requests.get(url,params=payload)
 		print r
