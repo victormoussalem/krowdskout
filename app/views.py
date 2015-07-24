@@ -35,8 +35,9 @@ def refresh_locations():
 def update_occupancy():
 	data = request.get_json(force=True)
 	device_id = data['coreid']
+	occ_change = data['occ_change']
 	l = Location.query.first()
-	l.occupancy_count = 2
+	l.occupancy_count = occ_change
 	db.session.commit()
 #	data = request.get_json(force=True)
 #	if data is not None:
