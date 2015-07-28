@@ -77,9 +77,9 @@ void loop() {
     if(occ_change != 0) {
         now = millis();
         if ((now - lastPublish) > PUBLISH_DELAY) {
-            Spark.publish("updates",String(occ_change),60,PRIVATE);
+            Spark.publish("update",String(occ_change),60,PRIVATE);
             lastPublish = now;
-            occ_change = 0;
+            //occ_change = 0;
         }
     }
 }
