@@ -34,20 +34,20 @@ def refresh_locations():
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
 	data = request.get_json(force=True)
-#	device_id = data['coreid']
-#	occ_change = data['occ_change']
-#	l = Location.query.filter_by(device_id=device_id).first()
-#	l.occupancy_count += int(occ_change)
-#	db.session.commit()
-#	return "Success"
-	if data is not None:
-		device_id = data['coreid']
-		if device_id is not None:
-			occ_change = data['occ_change']
-			if occ_change is not None:
-				l = Location.query.filter_by(device_id=device_id).first()
-				if l is not Hone:
-					l.occupancy_count += int(occ_change)
-					db.session.commit()
-					return 'Success'
-	return 'Failure'
+	device_id = data['coreid']
+	occ_change = data['occ_change']
+	l = Location.query.filter_by(device_id=device_id).first()
+	l.occupancy_count += int(occ_change)
+	db.session.commit()
+	return "Success"
+#	if data is not None:
+#		device_id = data['coreid']
+#		if device_id is not None:
+#			occ_change = data['occ_change']
+#			if occ_change is not None:
+#				l = Location.query.filter_by(device_id=device_id).first()
+#				if l is not Hone:
+#					l.occupancy_count += int(occ_change)
+#					db.session.commit()
+#					return 'Success'
+#	return 'Failure'
