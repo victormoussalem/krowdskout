@@ -59,29 +59,29 @@ void setup() {
 }
 
 void loop() {
-//    cm[0] = rangefinder0.getDistanceCM();
-//    delay(10);
-//    cm[1] = rangefinder1.getDistanceCM();
-//    //If either sensor returns an error value, just ignore this pulse.
-//    if(cm[0] == -1 || cm[1] == -1) {
-//        return;
-//    } else if(cm[0] < TRIGGER_DISTANCE && cm[1] >= TRIGGER_DISTANCE) {  //Detect which sensor was tripped first.
-//        occ_change--;
-//        delay(1000);                                                    //Naive assumption that person will move within 1sec.
-//    } else if(cm[0] >= TRIGGER_DISTANCE && cm[1] < TRIGGER_DISTANCE) { 
-//        occ_change++;
-//        delay(1000);
-//    }
+    cm[0] = rangefinder0.getDistanceCM();
+    delay(10);
+    cm[1] = rangefinder1.getDistanceCM();
+    //If either sensor returns an error value, just ignore this pulse.
+    if(cm[0] == -1 || cm[1] == -1) {
+        return;
+    } else if(cm[0] < TRIGGER_DISTANCE && cm[1] >= TRIGGER_DISTANCE) {  //Detect which sensor was tripped first.
+        occ_change--;
+        delay(1000);                                                    //Naive assumption that person will move within 1sec.
+    } else if(cm[0] >= TRIGGER_DISTANCE && cm[1] < TRIGGER_DISTANCE) { 
+        occ_change++;
+        delay(1000);
+    }
     
     //Code to handle publising of data.
-//    if(occ_change != 0) {
-//        now = millis();
-//        if ((now - lastPublish) > PUBLISH_DELAY) {
-//            Spark.publish("update",String(occ_change),60,PRIVATE);
-//            lastPublish = now;
-//            occ_change = 0;
-//        }
-//    }
+    if(occ_change != 0) {
+        now = millis();
+        if ((now - lastPublish) > PUBLISH_DELAY) {
+            Spark.publish("update",String(occ_change),60,PRIVATE);
+            lastPublish = now;
+            occ_change = 0;
+        }
+    }
 }
 
 
