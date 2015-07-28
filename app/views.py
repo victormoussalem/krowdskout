@@ -34,7 +34,7 @@ def refresh_locations():
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
 	data = request.get_json(force=True)
-	device_id = data['coreid']
+	#device_id = data['coreid']
 	occ_change = data['occ_change']
 	l = Location.query.first()
 	l.occupancy_count += occ_change
