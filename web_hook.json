@@ -1,12 +1,12 @@
-{
-    "eventName": "update",
-    "url": "https://krowdskout.herokuapp.com/update_occupancy",
-    "requestType": "POST",
-    "headers": null,
-    "responseTemplate":"",
-    "json": {
-        "occ_change": "{{SPARK_EVENT_VALUE}}"
-    },
-    "auth": null,
-    "mydevices": true
-}
+   { eventName: 'update',
+     url: 'https://krowdskout.herokuapp.com/update_occupancy',
+     requestType: undefined,
+     headers: null,
+     responseTemplate: '',
+     json: { occ_change: '{{SPARK_EVENT_VALUE}}' },
+     auth: null,
+     mydevices: true,
+     event: 'update',
+     deviceid: undefined,
+     access_token: '9f31f73917dc2e0aa346f57a5fe8b58f39348224' }
+ }
