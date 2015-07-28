@@ -74,8 +74,6 @@ void loop() {
     }
     
     //Code to handle publising of data.
-    Spark.publish("update",String(2),60,PRIVATE);
-
     if(occ_change != 0) {
         now = millis();
         if ((now - lastPublish) > PUBLISH_DELAY) {
