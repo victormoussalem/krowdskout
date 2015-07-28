@@ -34,8 +34,7 @@ def refresh_locations():
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
 	data = request.get_json(force=True)
-	if data is None:
-		return "Failure :("
+	device_id = data['coreid']
 	#if data is not None:
 	#	device_id = data['coreid']
 	#	if device_id is not None:
