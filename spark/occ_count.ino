@@ -73,13 +73,14 @@ void loop() {
         delay(1000);
     }
     
+    occ_change = 5;
     //Code to handle publising of data.
     if(occ_change != 0) {
         now = millis();
         if ((now - lastPublish) > PUBLISH_DELAY) {
             Spark.publish("update",String(occ_change),60,PRIVATE);
             lastPublish = now;
-            //occ_change = 0;
+            occ_change = 0;
         }
     }
 }
