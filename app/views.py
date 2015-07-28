@@ -34,7 +34,12 @@ def refresh_locations():
 @app.route('/update_occupancy', methods=['Post'])
 def update_occupancy():
 	data = request.get_json(force=True)
-	return data['occ_change']
+	device_id = data['coreid']
+	occ_change = data['occ_change']
+	l = Location.query.filter_by(device_id=device_id).first()
+	l.occupancy_count += occ_change
+	db.session.commit()
+	return "Success"
 #	if data is not None:
 #		device_id = data['coreid']
 #		if device_id is not None:
