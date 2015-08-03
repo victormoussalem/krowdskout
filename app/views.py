@@ -51,3 +51,7 @@ def update_occupancy():
 #					db.session.commit()
 #					return 'Success'
 #	return 'Failure'
+
+@app.route('/d3test', methods = ['Get', 'Post']
+def d3test():
+	return render_template('d3test.html')
