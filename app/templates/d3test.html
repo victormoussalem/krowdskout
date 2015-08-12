@@ -3,8 +3,8 @@
     <title>Timeline Demo Krowdskout</title>
 
 	<script src="http://d3js.org/d3.v2.min.js"></script>
-        <script src="app/templates/moment.js"></script>
-	<script src="../app/templates/timeline.js"></script>
+        <script type="text/javascript" src="{{ url_for('app', filename='moment.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('app', filename='timeline.js') }}"></script>
   </head>
 
   <body>
@@ -14,7 +14,7 @@
 
   </body>
 
-	<script src="../app/templates/example.js"></script>
+        <script type="text/javascript" src="{{ url_for('app', filename='example.js') }}"></script>
 
 </HTML>
 
