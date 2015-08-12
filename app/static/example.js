@@ -22,6 +22,8 @@ d3.json("history.json", function(json) {
 	//	 return d.data; })
 		 if (d.data < 0)
 			return (-1) * d.data + " people walked out";
+		else if (d.data == 1)
+			return d.data + " person walked out";
 		else
 			return d.data + " people walked in";
 		})
