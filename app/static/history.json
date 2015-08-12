@@ -1,0 +1,13 @@
+{
+	"events" : [
+		{ "published_at" : "2015-08-11T06:52:14.143Z", "device" : "Victor_Core", "data" : "1" },
+		{ "published_at" : "2015-08-11T07:21:02.455Z", "device" : "Victor_Core", "data" : "-1" },
+		{ "published_at" : "2015-08-11T07:23:11.486Z", "device" : "Victor_Core", "data" : "-1" },
+		{ "published_at" : "2015-08-11T07:23:11.569Z", "device" : "Victor_Core", "data" : "3" },
+		{ "published_at" : "2015-08-11T06:40:27.740Z", "device" : "Victor_Core", "data" : "1" },
+		{ "published_at" : "2015-08-11T06:38:55.877Z", "device" : "Victor_Core", "data" : "1" },
+		{ "published_at" : "2015-08-11T06:38:38.232Z", "device" : "Victor_Core", "data" : "-1" },
+		{ "published_at" : "2015-08-11T06:38:23.465Z", "device" : "Victor_Core", "data" : "1" }
+	]
+}
+

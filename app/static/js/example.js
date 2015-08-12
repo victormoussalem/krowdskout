@@ -1,4 +1,4 @@
-d3.json("./history.json", function(json) {
+d3.json("{{url_for('static', filename='history.json')}}", function(json) {
 
 	if (json === null) return; // parse problem, nothing to do here
 
