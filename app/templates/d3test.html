@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
+<HTML>
+  <head>
+    <title>Timeline Demo Krowdskout</title>
 
-<style>
-.chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-}
-</style>
-<div class="chart"></div>
-<body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	<script>
-	var data = [4, 8, 15, 16, 23, 42];
+	<script src="http://d3js.org/d3.v2.min.js"></script>
+        <script src="node_modules/moment/moment.js"></script>
+	<script src="timeline.js"></script>
+  </head>
 
-	var x = d3.scale.linear()
-   	 .domain([0, d3.max(data)])
-   	 .range([0, 420]);
+  <body>
+    <h1>Timeline Demo Krowdskout</h1>
+	
+	<div id="chart"></div>
 
-	d3.select(".chart")
- 	 .selectAll("div")
-   	 .data(data)
- 	 .enter().append("div")
-   	 .style("width", function(d) { return x(d) + "px"; })
-   	 .text(function(d) { return d; });
-        </script>
-</body>
+  </body>
+
+	<script src="example.js"></script>
+
+</HTML>
 
