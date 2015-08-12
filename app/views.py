@@ -52,6 +52,6 @@ def update_occupancy():
 #					return 'Success'
 #	return 'Failure'
 
-@app.route('/timeline')
+@app.route('/static/timeline')
 def timeline():
 	return render_template('d3test.html')
