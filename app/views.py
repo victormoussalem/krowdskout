@@ -55,3 +55,7 @@ def update_occupancy():
 @app.route('/static/timeline')
 def timeline():
 	return render_template('d3test.html')
+
+@app.route('/static/interactive_timeline')
+def interactive_timeline():
+	return render_template('interactive_timeline.html')
